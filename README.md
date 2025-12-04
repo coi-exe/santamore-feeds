@@ -1,5 +1,4 @@
 # Santamore Feeds - Digital Cooperative Platform
-
 Project Overview
 Santamore Feeds is a digital cooperative platform that enables small-scale farmers in Kenya to:
 - Buy animal feeds at factory prices through group buying
@@ -8,7 +7,6 @@ Santamore Feeds is a digital cooperative platform that enables small-scale farme
 - Access zone-based delivery optimization
 
 ## Key Features
-- **
 - Group Buy Engine: Farmers pool orders to unlock wholesale discounts
 - Lipa Mdogo Mdogo: Installment payment system via M-Pesa
 - Zone-based Delivery: Optimized logistics reducing transport costs
