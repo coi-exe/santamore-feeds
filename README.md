@@ -19,41 +19,6 @@ A web-based platform enabling Central Kenya smallholder farmers to access wholes
 - **Payment**: M-Pesa Daraja API
 - **Authentication**: Django built-in auth system
 
-## Installation
-```bash
-# Clone repository
-git clone https://github.com/YOUR_USERNAME/santamore-feeds.git
-cd santamore-feeds
-
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
-# Install dependencies
-pip install django requests python-decouple
-
-# Setup database
-python manage.py migrate
-
-# Create superuser
-python manage.py createsuperuser
-
-# Run development server
-python manage.py runserver
-```
-
-## Environment Variables
-
-Create a `.env` file with:
-```
-SECRET_KEY=your-secret-key
-DEBUG=True
-MPESA_CONSUMER_KEY=your-mpesa-key
-MPESA_CONSUMER_SECRET=your-mpesa-secret
-MPESA_SHORTCODE=174379
-MPESA_PASSKEY=your-passkey
-```
-
 ## Database Schema
 
 - **Zone**: Location-based groups with discount thresholds
@@ -80,8 +45,6 @@ MPESA_PASSKEY=your-passkey
 
 ## Author
 
-[Your Name] - Student Project 2024
+Tabitha Gichuki - eMobilis Project 2025
 
-## License
 
-Educational Project
