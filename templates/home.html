@@ -1,0 +1,334 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero-section mb-5" style="
+    background: linear-gradient(rgba(46, 90, 57, 0.85), rgba(30, 58, 40, 0.85)), 
+                url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1600&q=80') center/cover no-repeat;
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    color: white;
+">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="badge bg-success mb-3">
+                    <i class="fas fa-users me-1"></i> Digital Cooperative Platform
+                </div>
+                <h1 class="display-3 fw-bold mb-4" style="line-height: 1.2; color: white;">
+                    Buy Feed Smarter.<br>
+                    <span style="color: #F2E3BC;">Save Together.</span>
+                </h1>
+                <p class="lead mb-4" style="font-size: 1.2rem; color: rgba(255,255,255,0.95);">
+                    Join hundreds of Central Kenya farmers using collective buying power to unlock wholesale prices, share transport costs, and build sustainable farming communities.
+                </p>
+                
+                <div class="row g-3 mb-4">
+                    <div class="col-4">
+                        <div class="text-center p-3 rounded" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);">
+                            <h2 class="fw-bold mb-1" style="color: white;">15%</h2>
+                            <small style="color: rgba(255,255,255,0.9);">Average Savings</small>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="text-center p-3 rounded" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);">
+                            <h2 class="fw-bold mb-1" style="color: white;">5</h2>
+                            <small style="color: rgba(255,255,255,0.9);">Active Zones</small>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="text-center p-3 rounded" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);">
+                            <h2 class="fw-bold mb-1" style="color: white;">300kg</h2>
+                            <small style="color: rgba(255,255,255,0.9);">Target Weight</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="d-flex gap-3 mb-4">
+                    <a href="{% url 'register' %}" class="btn btn-light btn-lg shadow">
+                        <i class="fas fa-user-plus me-2"></i> Join Cooperative
+                    </a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-light btn-lg">
+                        Sign In
+                    </a>
+                </div>
+
+                <div class="d-flex gap-4 small" style="color: rgba(255,255,255,0.9);">
+                    <div><i class="fas fa-check-circle me-1"></i> No membership fees</div>
+                    <div><i class="fas fa-check-circle me-1"></i> Secure M-Pesa payments</div>
+                    <div><i class="fas fa-check-circle me-1"></i> Quality guaranteed</div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-lg" style="background: rgba(242, 227, 188, 0.95); backdrop-filter: blur(10px);">
+                    <div class="card-body p-5">
+                        <h3 class="fw-bold mb-4" style="color: #2E5A39;">
+                            <i class="fas fa-rocket me-2"></i> How It Works
+                        </h3>
+                        
+                        <div class="mb-4">
+                            <div class="d-flex align-items-start">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 50px; height: 50px; background: #2E5A39; color: white; flex-shrink: 0;">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1" style="color: #8B5E3C;">Select Your Zone</h5>
+                                    <p class="mb-0 text-muted">Register with your village location in Central Kenya</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="d-flex align-items-start">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 50px; height: 50px; background: #2E5A39; color: white; flex-shrink: 0;">
+                                    <i class="fas fa-shopping-basket"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1" style="color: #8B5E3C;">Order Animal Feed</h5>
+                                    <p class="mb-0 text-muted">Browse quality feeds and add to your cart</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="d-flex align-items-start">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 50px; height: 50px; background: #2E5A39; color: white; flex-shrink: 0;">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1" style="color: #8B5E3C;">Group Buy Activates</h5>
+                                    <p class="mb-0 text-muted">Hit 300kg in your zone → everyone gets 15% off!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="d-flex align-items-start">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                     style="width: 50px; height: 50px; background: #2E5A39; color: white; flex-shrink: 0;">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1" style="color: #8B5E3C;">Pay via M-Pesa</h5>
+                                    <p class="mb-0 text-muted">Secure, instant STK Push payment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+<div class="row py-5">
+    <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="badge bg-success mb-3">
+            <i class="fas fa-users me-1"></i> Digital Cooperative Platform
+        </div>
+        <h1 class="display-3 fw-bold mb-4" style="color: #2E5A39; line-height: 1.2;">
+            Buy Feed Smarter.<br>
+            <span style="color: #8B5E3C;">Save Together.</span>
+        </h1>
+        <p class="lead mb-4" style="color: #555; font-size: 1.2rem;">
+            Join hundreds of Central Kenya farmers using collective buying power to unlock wholesale prices, share transport costs, and build sustainable farming communities.
+        </p>
+        
+        <div class="row g-3 mb-4">
+            <div class="col-4">
+                <div class="text-center p-3 rounded" style="background: #f8f9fa;">
+                    <h2 class="fw-bold mb-1" style="color: #2E5A39;">15%</h2>
+                    <small class="text-muted">Average Savings</small>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="text-center p-3 rounded" style="background: #f8f9fa;">
+                    <h2 class="fw-bold mb-1" style="color: #2E5A39;">5</h2>
+                    <small class="text-muted">Active Zones</small>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="text-center p-3 rounded" style="background: #f8f9fa;">
+                    <h2 class="fw-bold mb-1" style="color: #2E5A39;">300kg</h2>
+                    <small class="text-muted">Target Weight</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="d-flex gap-3 mb-4">
+            <a href="{% url 'register' %}" class="btn btn-primary-custom btn-lg">
+                <i class="fas fa-user-plus me-2"></i> Join Cooperative
+            </a>
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-lg">
+                Sign In
+            </a>
+        </div>
+
+        <div class="d-flex gap-4 text-muted small">
+            <div><i class="fas fa-check-circle me-1" style="color: #2E5A39;"></i> No membership fees</div>
+            <div><i class="fas fa-check-circle me-1" style="color: #2E5A39;"></i> Secure M-Pesa payments</div>
+            <div><i class="fas fa-check-circle me-1" style="color: #2E5A39;"></i> Quality guaranteed</div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6">
+        <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #F2E3BC 0%, #e8d7a8 100%);">
+            <div class="card-body p-5">
+                <h3 class="fw-bold mb-4" style="color: #2E5A39;">
+                    <i class="fas fa-rocket me-2"></i> How It Works
+                </h3>
+                
+                <div class="mb-4">
+                    <div class="d-flex align-items-start">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                             style="width: 50px; height: 50px; background: #2E5A39; color: white; flex-shrink: 0;">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1" style="color: #8B5E3C;">Select Your Zone</h5>
+                            <p class="mb-0 text-muted">Register with your village location in Central Kenya</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="d-flex align-items-start">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                             style="width: 50px; height: 50px; background: #2E5A39; color: white; flex-shrink: 0;">
+                            <i class="fas fa-shopping-basket"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1" style="color: #8B5E3C;">Order Animal Feed</h5>
+                            <p class="mb-0 text-muted">Browse quality feeds and add to your cart</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="d-flex align-items-start">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                             style="width: 50px; height: 50px; background: #2E5A39; color: white; flex-shrink: 0;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1" style="color: #8B5E3C;">Group Buy Activates</h5>
+                            <p class="mb-0 text-muted">Hit 300kg in your zone → everyone gets 15% off!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="d-flex align-items-start">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" 
+                             style="width: 50px; height: 50px; background: #2E5A39; color: white; flex-shrink: 0;">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1" style="color: #8B5E3C;">Pay via M-Pesa</h5>
+                            <p class="mb-0 text-muted">Secure, instant STK Push payment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row py-5 px-3" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 20px;">
+    <div class="col-12 text-center mb-5">
+        <h2 class="fw-bold mb-2" style="color: #2E5A39;">Why Farmers Choose Santamore</h2>
+        <p class="text-muted">Trusted by smallholder farmers across Central Kenya</p>
+    </div>
+    <div class="col-md-4 text-center mb-4">
+        <div class="mb-3">
+            <i class="fas fa-shield-alt fa-4x" style="color: #2E5A39;"></i>
+        </div>
+        <h5 class="fw-bold mb-2">Secure Payments</h5>
+        <p class="text-muted">M-Pesa integration ensures safe, instant transactions with full receipt tracking</p>
+    </div>
+    <div class="col-md-4 text-center mb-4">
+        <div class="mb-3">
+            <i class="fas fa-truck fa-4x" style="color: #2E5A39;"></i>
+        </div>
+        <h5 class="fw-bold mb-2">Shared Transport</h5>
+        <p class="text-muted">Split delivery costs across your zone and save on logistics expenses</p>
+    </div>
+    <div class="col-md-4 text-center mb-4">
+        <div class="mb-3">
+            <i class="fas fa-tag fa-4x" style="color: #2E5A39;"></i>
+        </div>
+        <h5 class="fw-bold mb-2">Wholesale Prices</h5>
+        <p class="text-muted">Access bulk discounts traditionally only available to large-scale farmers</p>
+    </div>
+</div>
+
+<div class="row py-5">
+    <div class="col-12 text-center mb-5">
+        <h2 class="fw-bold mb-2" style="color: #2E5A39;">Available Feed Types</h2>
+        <p class="text-muted">Quality nutrition for all your livestock needs</p>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow-sm h-100 text-center">
+            <div class="card-body p-4">
+                <i class="fas fa-cow fa-4x mb-3" style="color: #2E5A39;"></i>
+                <h4 class="fw-bold mb-2" style="color: #8B5E3C;">Dairy Feeds</h4>
+                <p class="text-muted mb-0">High-protein formulations designed to maximize milk production and cow health</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow-sm h-100 text-center">
+            <div class="card-body p-4">
+                <i class="fas fa-drumstick-bite fa-4x mb-3" style="color: #2E5A39;"></i>
+                <h4 class="fw-bold mb-2" style="color: #8B5E3C;">Poultry Feeds</h4>
+                <p class="text-muted mb-0">Complete nutrition for layers, broilers, and chicks at every growth stage</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow-sm h-100 text-center">
+            <div class="card-body p-4">
+                <i class="fas fa-piggy-bank fa-4x mb-3" style="color: #2E5A39;"></i>
+                <h4 class="fw-bold mb-2" style="color: #8B5E3C;">Pig Feeds</h4>
+                <p class="text-muted mb-0">Balanced formulas supporting optimal growth and weight gain for pigs</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row py-5 px-4" style="background: linear-gradient(135deg, #2E5A39 0%, #1e3a28 100%); border-radius: 20px; color: white;">
+    <div class="col-lg-8 mx-auto text-center">
+        <h2 class="fw-bold mb-3">The Problem We Solve</h2>
+        <p class="lead mb-4">Smallholder farmers in Central Kenya face high feed costs due to retail pricing and individual transport expenses. By pooling orders within zones, Santamore Feeds enables farmers to access wholesale rates and shared delivery—reducing costs by up to 15% while building stronger farming communities.</p>
+        <div class="row mt-4">
+            <div class="col-md-6 mb-3">
+                <div class="p-3 rounded" style="background: rgba(255,255,255,0.1);">
+                    <h4 class="fw-bold mb-2">Traditional Buying</h4>
+                    <p class="mb-0">KSh 3,500 per 70kg sack + individual transport</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="p-3 rounded" style="background: rgba(255,255,255,0.2);">
+                    <h4 class="fw-bold mb-2">With Santamore</h4>
+                    <p class="mb-0">KSh 2,975 per sack + shared transport</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row py-5">
+    <div class="col-12 text-center">
+        <h2 class="fw-bold mb-3" style="color: #2E5A39;">Ready to Start Saving?</h2>
+        <p class="lead text-muted mb-4">Join Central Kenya's growing cooperative of smart farmers</p>
+        <a href="{% url 'register' %}" class="btn btn-primary-custom btn-lg">
+            <i class="fas fa-rocket me-2"></i> Get Started Today
+        </a>
+    </div>
+</div>
+</div>
+{% endblock %}

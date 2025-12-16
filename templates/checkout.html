@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}Checkout - Santamore Feeds{% endblock %}
+
+{% block content %}
+<h1 class="fw-bold mb-4" style="color: #2E5A39;">
+    <i class="fas fa-check-circle me-2"></i> Complete Your Order
+</h1>
+
+<div class="row">
+    <div class="col-lg-7 mb-4">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h5 class="fw-bold mb-4" style="color: #2E5A39;">
+                    <i class="fas fa-box me-2"></i> Order Details
+                </h5>
+                
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <p class="text-muted mb-1">Order Number</p>
+                        <p class="fw-bold mb-0" style="color: #2E5A39;">#{{ order.id }}</p>
+                    </div>
+                    <div class="col-6 text-end">
+                        <p class="text-muted mb-1">Status</p>
+                        <span class="badge bg-warning">{{ order.status }}</span>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <h6 class="fw-bold mb-3" style="color: #8B5E3C;">Items Ordered:</h6>
+                {% for item in order.items.all %}
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div>
+                            <p class="mb-0 fw-bold">{{ item.product.name }}</p>
+                            <small class="text-muted">{{ item.quantity }} × KSh {{ item.price }}</small>
+                        </div>
+                        <p class="mb-0 fw-bold" style="color: #2E5A39;">
+                            KSh {% widthratio item.price 1 item.quantity %}
+                        </p>
+                    </div>
+                {% endfor %}
+                
+                <hr>
+                
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="fw-bold mb-0" style="color: #2E5A39;">Total Amount:</h5>
+                    <h4 class="fw-bold mb-0" style="color: #2E5A39;">KSh {{ order.total_amount }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-5">
+        <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #2E5A39 0%, #1e3a28 100%); color: white;">
+            <div class="card-body p-4">
+                <h5 class="fw-bold mb-3">
+                    <i class="fas fa-mobile-alt me-2"></i> M-Pesa Payment
+                </h5>
+                
+                <div class="bg-white bg-opacity-10 rounded p-3 mb-3">
+                    <p class="mb-1 small">Payment Phone Number:</p>
+                    <p class="fw-bold mb-0 h5">{{ payment.phone_number }}</p>
+                </div>
+                
+                <div class="alert alert-light mb-3">
+                    <p class="mb-2 fw-bold text-dark">
+                        <i class="fas fa-info-circle me-2"></i> How to Pay:
+                    </p>
+                    <ol class="mb-0 text-dark small ps-3">
+                        <li>Click "Pay Now" button below</li>
+                        <li>Enter your M-Pesa PIN on your phone</li>
+                        <li>Confirm the payment</li>
+                        <li>Wait for confirmation</li>
+                    </ol>
+                </div>
+
+                <a href="{% url 'stk_push' payment.id %}" class="btn btn-light btn-lg w-100 mb-2 fw-bold">
+                    <i class="fas fa-money-bill-wave me-2"></i> Pay KSh {{ order.total_amount }} Now
+                </a>
+                
+                <details class="mt-3">
+                    <summary class="text-white-50 small" style="cursor: pointer;">Advanced Options</summary>
+                    <form method="post" action="{% url 'manual_confirm' payment.id %}" class="mt-2">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-light btn-sm w-100">
+                            <i class="fas fa-cog me-2"></i> Test Mode
+                        </button>
+                        <small class="text-white-50 d-block mt-1">Development/testing only</small>
+                    </form>
+                </details>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

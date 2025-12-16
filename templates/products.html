@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %}Products - Santamore Feeds{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="fw-bold mb-0" style="color: #2E5A39;">
+        <i class="fas fa-box-open me-2"></i> Quality Animal Feeds
+    </h1>
+</div>
+
+{% if zone %}
+    <div class="card mb-4 border-0 shadow-sm" style="background: linear-gradient(135deg, #F2E3BC 0%, #e8d7a8 100%);">
+        <div class="card-body p-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5 class="fw-bold mb-2" style="color: #2E5A39;">
+                        <i class="fas fa-map-marker-alt me-2"></i> Your Zone: {{ zone.name }}
+                    </h5>
+                    <div class="progress" style="height: 30px;">
+                        <div class="progress-bar" role="progressbar" 
+                             style="width: {% widthratio zone.current_weight zone.target_weight 100 %}%;">
+                            <span class="fw-bold">{{ zone.current_weight }}kg / {{ zone.target_weight }}kg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    {% if discount_active %}
+                        <div class="badge bg-success p-3">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <strong>GROUP BUY ACTIVE!</strong> 15% OFF ALL PRODUCTS
+                        </div>
+                    {% else %}
+                        <p class="mb-0 fw-bold" style="color: #8B5E3C;">
+                            <i class="fas fa-users me-2"></i>
+                            More orders needed to unlock 15% discount
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+<div class="row">
+    {% for product in products %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <span class="badge" style="background: #8B5E3C;">
+                            {{ product.get_feed_type_display }}
+                        </span>
+                        {% if product.feed_type == 'DAIRY' %}
+                            <i class="fas fa-cow fa-2x" style="color: #2E5A39;"></i>
+                        {% elif product.feed_type == 'POULTRY' %}
+                            <i class="fas fa-drumstick-bite fa-2x" style="color: #2E5A39;"></i>
+                        {% else %}
+                            <i class="fas fa-piggy-bank fa-2x" style="color: #2E5A39;"></i>
+                        {% endif %}
+                    </div>
+                    
+                    <h5 class="card-title fw-bold mb-2" style="color: #2E5A39;">{{ product.name }}</h5>
+                    <p class="card-text text-muted small mb-3">{{ product.description }}</p>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-weight-hanging me-2" style="color: #8B5E3C;"></i>
+                        <span class="fw-bold">{{ product.weight }}kg sack</span>
+                    </div>
+                    
+                    {% if discount_active %}
+                        <div class="mb-2">
+                            <span class="text-decoration-line-through text-muted">KSh {{ product.base_price }}</span>
+                            <span class="badge bg-success ms-2">-15%</span>
+                        </div>
+                        <h3 class="fw-bold mb-3" style="color: #2E5A39;">KSh {{ product.display_price|floatformat:0 }}</h3>
+                    {% else %}
+                        <h3 class="fw-bold mb-3" style="color: #2E5A39;">KSh {{ product.display_price|floatformat:0 }}</h3>
+                    {% endif %}
+                    
+                    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary-custom w-100">
+                        <i class="fas fa-cart-plus me-2"></i> Add to Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle me-2"></i> No products available at the moment.
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

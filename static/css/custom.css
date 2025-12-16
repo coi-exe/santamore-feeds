@@ -1,0 +1,47 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 2px solid #F2E3BC;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #2E5A39;
+    box-shadow: 0 0 0 0.2rem rgba(46, 90, 57, 0.25);
+}
+
+.card {
+    border-radius: 12px;
+    border: none;
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.card-footer {
+    border-top: none;
+}
+
+.progress {
+    border-radius: 10px;
+    background-color: #e9ecef;
+}
+
+footer {
+    margin-top: auto;
+}
